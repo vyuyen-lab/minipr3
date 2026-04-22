@@ -1,4 +1,4 @@
-# Các hàm chức năng (Sẽ viết code sau)
+
 def add_member(members):
     pass
 
@@ -10,7 +10,7 @@ def search_member(members):
 
 # Hàm điều phối chính
 def main():
-    gym_members = [] # Dữ liệu trung tâm (Biến cục bộ)
+    gym_members = [] 
     
     while True:
         print("\n--- QUẢN LÝ PHÒNG GYM ---")
