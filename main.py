@@ -1,34 +1,43 @@
+import os
+import json
+
+# FILE JSON (TIÊU CHÍ 9)
+
+def load_data(filename):
+    """Đọc dữ liệu từ file JSON. Trả về mảng rỗng nếu file chưa tồn tại."""
+    if not os.path.exists(filename):
+        return []
+    with open(filename, 'r', encoding='utf-8') as file:
+        return json.load(file)
+
+def save_data(members, filename):
+    """Lưu toàn bộ dữ liệu vào file JSON với định dạng thụt lề chuẩn."""
+    with open(filename, 'w', encoding='utf-8') as file:
+        json.dump(members, file, ensure_ascii=False, indent=4)
 
 def add_member(members):
-    pass
-
-def display_members(members):
-    pass
-
-def search_member(members):
-    pass
-
-# Hàm điều phối chính
-def main():
-    gym_members = [] 
+    """Thêm hội viên với cơ chế bẫy lỗi nhập liệu (try-except)."""
+    print("\n--- THÊM HỘI VIÊN MỚI ---")
+    member_id = input("Nhập Mã HV (VD: G01): ").strip().upper()
+    name = input("Nhập Tên HV: ").strip()
+    member_type = input("Nhập Gói Tập (Thuong/VIP): ").strip().upper()
     
     while True:
-        print("\n--- QUẢN LÝ PHÒNG GYM ---")
-        print("1. Thêm hội viên")
-        print("2. Xem danh sách")
-        print("3. Thoát")
-        
-        choice = input("Chọn chức năng: ")
-        
-        if choice == '1':
-            add_member(gym_members)
-        elif choice == '2':
-            display_members(gym_members)
-        elif choice == '3':
-            print("Tạm biệt!")
+        try:
+            months = int(input("Nhập số tháng đăng ký: "))
+            if months <= 0:
+                print("-> Lỗi: Số tháng phải lớn hơn 0.")
+                continue
             break
-        else:
-            print("Lựa chọn không hợp lệ, vui lòng nhập lại!")
+        except ValueError:
+            print("-> Lỗi: Vui lòng nhập một số nguyên (VD: 3, 6, 12)!")
 
-if __name__ == "__main__":
-    main()
+    while True:
+        try:
+            cost = float(input("Nhập tổng chi phí (VND): "))
+            if cost < 0:
+                print("-> Lỗi: Chi phí không được là số âm.")
+                continue
+            break
+        except ValueError:
+            print("-> Lỗi: Vui lòng nhập số hợp lệ!")
