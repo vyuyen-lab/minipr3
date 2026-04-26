@@ -13,3 +13,17 @@ Dự án đã hoàn thiện 100% các yêu cầu cơ bản và nâng cao:
    - Thống kê gom nhóm: Tự động phân loại và tính tổng doanh thu riêng cho thẻ VIP và thẻ THƯỜNG.
 6. Lưu trữ Cấu trúc JSON (Tiêu chí 7 & 9):Tự động xuất/nhập dữ liệu dưới định dạng `gym_data.json` đảm bảo tính toàn vẹn của cấu trúc (List of Dictionaries) thay vì txt thuần túy.
 
+-Không sử dụng Biến Toàn Cục (No Global Variables): Dữ liệu `gym_members` được khởi tạo cục bộ trong hàm `main()` và truyền qua các tham số (parameters) vào các hàm con.
+- Mã nguồn được module hóa, mỗi hàm chỉ đảm nhận đúng một vai trò duy nhất (nhập, xuất, tìm kiếm...).
+
+# Chạy chương trình
+
+1. Yêu cầu hệ thống:
+- Máy tính đã cài đặt Python 3.6 trở lên.
+- Không yêu cầu cài thêm thư viện bên ngoài (dùng thư viện `os` và `json` có sẵn của Python).
+
+2. Cách chạy ứng dụng:
+- Bước 1: Mở Terminal / Command Prompt tại thư mục chứa dự án.
+- Bước 2: Chạy tệp lệnh chính bằng cú pháp:
+  ```bash
+  python main.py
