@@ -1,0 +1,9 @@
+[
+    {
+        "id": "G01",
+        "name": "Tiến",
+        "type": "THUONG",
+        "months": 6,
+        "cost": 12000000.0
+    }
+]
